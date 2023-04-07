@@ -1,0 +1,9 @@
+$git clone https://github.com/mmohamed/kafka-kubernetes
+
+##需要更換stateful.yaml中的namespace
+$ kubectl --context arn:aws:eks:ap-south-1:xxxxxxxxxxxx:cluster/xxxxx-staging --namespace infra apply -f .\service.yaml
+service/kafka-broker created
+service/kafka-service created
+
+$ kubectl --context arn:aws:eks:ap-south-1:xxxxxxxxxxxx:cluster/xxxxx-staging --namespace infra apply -f .\statefulset.yaml
+statefulset.apps/kafka created
